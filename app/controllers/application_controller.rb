@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
 
     def configure_permitted_parameters # deviseで使われているstrong_parameterを上書き
         devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :introduction, :avatar])
-        devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduction, avatar])
+        devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduction, :avatar])
     end
 end
