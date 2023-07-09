@@ -1,0 +1,23 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.search-form {
+    height: 800px;
+    width: 100%;
+    color: #fff;
+    background-image: image-url('nature.jpeg');
+    background-size: cover;
+    background-position: center bottom;
+    position: relative;
+    text-align: center;
+}
+
+.search-form span {
+    display: inline-block;
+    margin-top: 40px;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+

@@ -1,0 +1,47 @@
+body {
+    margin: o auto;
+    background-repeat: no-repeat;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    background-color: #222;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo,
+.footer-logo {
+    color: #fff;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.header p {
+    color: #fff;
+}
+
+.footer {
+    position: relative;
+    background-color: #222;
+    width: 100%;
+    height: 200px;
+}
+
+.footer-text {
+    position: absolute; 
+    top: 50%;
+    transform: translate(0,-50%);
+    left: 30px;
+}
+
+.copyright {
+    color: #fff;
+    font-size: 8px;
+}

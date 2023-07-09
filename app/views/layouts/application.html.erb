@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Reservation</title>
+    <title>宿泊予約サイト</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,27 @@
   </head>
 
   <body>
+
+    <header class = "header">
+      <a class = "header-logo" href = "/">Potepan Shere</a>
+      <div class = "header-nav">
+        <% if user_signed_in? %>
+          <p><%= current_user.name %></p>
+          <button><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+        <% else %>
+          <button><%= link_to "ログイン", new_user_session_path, class: 'header-ligin' %></button>
+          <button><%= link_to "新規登録", new_user_registration_path, class: 'header-new' %></button>
+        <% end %>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <footer class = "footer">
+      <div class = "footer-text">
+        <a class = "footer-logo" href = "/">Potepan Shere</a>
+        <p class = "copyright">Copyright &copy; Potepan Share 2023 All rights reserved</p>
+      </div>
+    </footer>
   </body>
 </html>
