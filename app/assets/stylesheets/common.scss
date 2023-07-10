@@ -1,10 +1,15 @@
 body {
-    margin: o auto;
+    margin: 0 auto;
     background-repeat: no-repeat;
 }
 
 a {
     text-decoration: none;
+}
+
+.button {
+    text-decoration: none;
+    color: #000;
 }
 
 .header {
@@ -21,6 +26,17 @@ a {
     color: #fff;
     font-weight: 700;
     font-size: 32px;
+    text-decoration: none;
+}
+
+.header-logo {
+    margin-left: 50px;
+}
+
+.header-nav {
+    display: flex;
+    column-gap: 10px;
+    margin-right: 50px;
 }
 
 .header p {
@@ -38,7 +54,7 @@ a {
     position: absolute; 
     top: 50%;
     transform: translate(0,-50%);
-    left: 30px;
+    left: 50px;
 }
 
 .copyright {
