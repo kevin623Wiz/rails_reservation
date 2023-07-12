@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rooms/index'
   get 'users/mypage'
   root to: 'tops#index'
 
@@ -14,5 +15,6 @@ Rails.application.routes.draw do
 
   get "/" => 'tops#index'
 
+  resources :rooms
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

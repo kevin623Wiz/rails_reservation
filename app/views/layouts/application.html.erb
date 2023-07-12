@@ -17,11 +17,20 @@
       <a class = "header-logo" href = "/">Potepan Shere</a>
       <div class = "header-nav">
         <% if user_signed_in? %>
-          <p><%= current_user.name %></p>
-          <button><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></button>
+          <div class="btn-group">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= image_tag current_user.avatar.url, class: "avatar" %>  
+            <%= current_user.name %>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><%= link_to "施設の新規登録", new_room_path, class:"dropdown-item" %></li>
+              <li><%= link_to "登録済み施設一覧", rooms_path(current_user.rooms), class:"dropdown-item" %></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, class:"dropdown-item", method: :delete %></li>
+            </ul>
+          </div>
         <% else %>
-          <button><%= link_to "ログイン", new_user_session_path, class: 'button header-ligin' %></button>
-          <button><%= link_to "新規登録", new_user_registration_path, class: 'button header-new' %></button>
+            <button><%= link_to "ログイン", new_user_session_path, class: 'button header-ligin' %></button>
+            <button><%= link_to "新規登録", new_user_registration_path, class: 'button header-new' %></button>
         <% end %>
       </div>
     </header>
@@ -34,5 +43,6 @@
         <p class = "copyright">Copyright &copy; Potepan Share 2023 All rights reserved</p>
       </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>

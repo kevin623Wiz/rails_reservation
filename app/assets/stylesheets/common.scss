@@ -7,6 +7,11 @@ a {
     text-decoration: none;
 }
 
+h3 {
+    padding-top: 30px;
+    margin-left: 100px;
+}
+
 .button {
     text-decoration: none;
     color: #000;
@@ -39,8 +44,24 @@ a {
     margin-right: 50px;
 }
 
-.header p {
-    color: #fff;
+.avatar {
+    width: 40px;
+    height: 40px;
+}
+
+table {
+    margin: 30px auto 100px;
+}
+
+table th {
+    background-color: #fbc25b;
+    padding: 10px 20px;
+    width: 250px
+}
+
+table td {
+    background-color: #f9ecd5;
+    padding: 10px 20px;
 }
 
 .footer {

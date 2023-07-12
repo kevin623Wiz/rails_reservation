@@ -1,0 +1,40 @@
+.form-box {
+    text-align: center;
+    margin: 30px auto 30px;
+    padding: 50px 0 50px;
+    width: 60%;
+    background-color: #ddd;
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+}
+
+.field {
+    margin-top: 10px;
+}
+
+.form-login input[type = "submit"],
+.form-new input[type = "submit"] {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 70%;
+    height: 50px;
+    border-style: none;
+    background-color: orange;
+    border-radius: 20px;
+}
+
+.new-registration,
+.user-login,
+.cancel {
+    display: inline-block;
+    width: 70%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+}
