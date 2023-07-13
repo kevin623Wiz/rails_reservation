@@ -1,26 +1,33 @@
 <h3>施設の新規登録</h3>
 
-<%= form_with model:@room do |f| %>
-    <div class = "field">
-        <%= f.label :name, "施設名" %>
-        <%= f.text_field :name %>
-    </div>
-    <div class = "field">
-        <%= f.label :introduction, "施設詳細" %>
-        <%= f.text_field :introduction %>
-    </div>
-    <div class = "field">
-        <%= f.label :name, "料金" %>
-        <%= f.text_field :price %>
-    </div>
-    <div class = "field">
-        <%= f.label :name, "住所" %>
-        <%= f.text_field :adress %>
-    </div>
+<div class = "form-box">
+    <%= form_with model:@room do |f| %>
+        <div class = "field">
+            <%= f.label :name, "施設名" %>
+            <%= f.text_field :name %>
+        </div>
+        <div class = "field">
+            <%= f.label :introduction, "施設詳細" %>
+            <%= f.text_area :introduction %>
+        </div>
+        <div class = "field">
+            <%= f.label :name, "料金" %>
+            <%= f.text_field :price %>
+        </div>
+        <div class = "field">
+            <%= f.label :name, "住所" %>
+            <%= f.text_field :adress %>
+        </div>
+        <div class = "field">
+            <%= f.label :room_image, "施設画像" %>
+            <%= f.file_field :room_image %>
+            <%= f.hidden_field :img_cache %>
+        </div>
 
-    <div class = "button">
-        <%= link_to "キャンセル", :rooms, class:"cancel" %>
-        <%= f.submit "保存", class:"form-login" %>
-    </div>
+        <div class = "button-area">
+            <%= f.submit "保存", class:"form-submit" %>
+            <%= link_to "キャンセル", :rooms, class:"cancel" %>
+        </div>
 
-<% end %>
+    <% end %>
+</div>

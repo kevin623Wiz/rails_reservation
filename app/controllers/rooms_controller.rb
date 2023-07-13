@@ -8,6 +8,13 @@ class RoomsController < ApplicationController
   end
 
   def create
+    @room = Room.new(room_params)
+      if @room.save
+        flash[:notice] = "施設を登録しました"
+        redirect_to :rooms
+      else
+        render "new"
+      end
   end
 
   def show
@@ -22,4 +29,10 @@ class RoomsController < ApplicationController
   def destroy
   end
 
+
+  private
+
+  def room_params
+    params.require(:room).permit(:name, :introduction, :price, :address, :room_image).merge(user_id:current_user.id)
+  end
 end

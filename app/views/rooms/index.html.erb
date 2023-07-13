@@ -1,7 +1,11 @@
 <div class = "form-container">
     <h3>登録済み一覧</h3>
 
-    <table>
+    <% if flash[:notice] %>
+        <p class = "notice"><%= flash[:notice] %></p>
+    <% end %>
+
+    <table class = "room-table">
         <thead>
             <tr>
                 <th>画像</th>
@@ -9,20 +13,32 @@
                 <th>紹介文</th>
                 <th>料金</th>
                 <th>作成日</th>
+                <th></th>
             </tr>
         </thead>
 
-        <tbody>
+        <tbody class = "room-table-body">
             <% @rooms.each do |room| %>
                 <tr>
-                    <td><%= room.introduction %></td>
+                    <td><%= image_tag room.room_image.url, class: "room-image" %></td>
                     <td><%= link_to "#{room.name}", room_path(room.id) %></td>
                     <td><%= room.introduction %></td>
-                    <td><%= room.price %></td>
-                    <td><%= room.create_at %></td>
+                    <td><%= number_to_currency(room.price, :unit => "¥", :format => "%u%n") %></td>
+                    <td><%= room.created_at.strftime("%Y/%m/%d") %></td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                            </ul>
+                        </div>
+                    </td>
                 </tr>
             <% end %>
         </tbody>
     </table>
-    
+
 </div>
