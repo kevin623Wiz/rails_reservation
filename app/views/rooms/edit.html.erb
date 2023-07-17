@@ -1,7 +1,7 @@
-<h3>施設の新規登録</h3>
+<h3>施設の編集</h3>
 
 <div class = "form-box">
-    <%= form_with model: @room do |f| %>
+    <%= form_with model:@room do |f| %>
         <div class = "field">
             <%= f.label :name, "施設名" %>
             <%= f.text_field :name %>
@@ -21,6 +21,7 @@
         <div class = "field">
             <%= f.label :room_image, "施設画像" %>
             <%= f.file_field :room_image %>
+            <%= f.hidden_field :img_cache %>
         </div>
 
         <div class = "button-area">

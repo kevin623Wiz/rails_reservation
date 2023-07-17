@@ -3,13 +3,30 @@ body {
     background-repeat: no-repeat;
 }
 
-a {
+a,
+.link {
     text-decoration: none;
+    color: #000;
+}
+
+.link-red {
+    text-decoration: none;
+    color: red;
 }
 
 h3 {
     padding-top: 30px;
     margin-left: 100px;
+}
+
+.notice {
+    background-color: lightblue;
+    text-align: center;
+}
+
+.alert {
+    background-color: orangered;
+    text-align: center;
 }
 
 .button {

@@ -3,6 +3,10 @@
 
     <% if flash[:notice] %>
         <p class = "notice"><%= flash[:notice] %></p>
+    <% elsif flash[:alert] %>
+        <p class = "alert"><%= flash[:alert] %></p>
+    <% else %>
+    
     <% end %>
 
     <table class = "room-table">
@@ -28,11 +32,10 @@
                     <td>
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><%= link_to "編集",[:edit,room], class:"link" %></li>
+                                <li><%= link_to "施設を削除", room, method: :delete, data:{confirm:"本当に削除しますか？"}, class:"link-red" %></li>
                             </ul>
                         </div>
                     </td>

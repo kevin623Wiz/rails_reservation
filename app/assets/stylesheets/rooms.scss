@@ -1,9 +1,45 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.room-show-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    column-gap: 100px;
+}
+
+.show-room {
+    margin-top: 50px;
+}
+
 .room-image {
     width: 100px;
     height: 50px;
+}
+
+.room-box,
+.room-box td {
+    background-color: lightgoldenrodyellow;
+}
+
+.room-box th {
+    width: 150px;
+    border: none;
+}
+
+.room-box td {
+    width: 300px;
+}
+
+.show-room-name {
+    color: #222;
+    font-size: 32px;
+}
+
+.show-room-price {
+    color: orange;
+    font-size: 32px;
 }
 
 .room-table {

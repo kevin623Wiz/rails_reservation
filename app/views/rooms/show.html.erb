@@ -1,0 +1,30 @@
+<div class = "show-room">
+    <div class = "show-room-action">
+        <%= link_to "←戻る", :back %>
+    </div>
+        <%= form_with model: @room do |f| %>
+        <div class = room-show-container>
+            <%= image_tag @room.room_image.url %>
+            <div class = "room-box">
+                <table>
+                    <tr>
+                        <th>施設名</th>
+                        <td class = "show-room-name"><%= @room.name %></td>
+                    </tr>
+                    <tr>
+                        <th>価格</th>
+                        <td class = "show-room-price"><%= number_to_currency(@room.price, :unit => "¥", :format => "%u%n") %></td>
+                    </tr>
+                    <tr>
+                        <th>住所</th>
+                        <td><%= @room.address %></td>
+                    </tr>
+                    <tr>
+                        <th>施設詳細</th>
+                        <td><%= @room.introduction %></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    <% end %>
+</div>
