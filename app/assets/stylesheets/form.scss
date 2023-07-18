@@ -10,8 +10,17 @@
     margin-bottom: 20px;
 }
 
+.form-table {
+    margin-bottom: 10px;
+}
+
+.form-table th {
+    border: none;
+    background-color: #f9ecd5;
+}
+
 .field {
-    margin-top: 10px;
+    margin: 10px auto 0;
 }
 
 .form-login input[type = "submit"],

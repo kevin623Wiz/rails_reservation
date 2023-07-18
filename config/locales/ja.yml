@@ -8,3 +8,11 @@ ja:
         email: メールアドレス
         password: パスワード
         introduction: 紹介文
+    models:
+      room: 施設
+    attributes:
+      room:
+        name: 名前
+        introduction: 施設詳細
+        price: 料金
+        address: 住所
