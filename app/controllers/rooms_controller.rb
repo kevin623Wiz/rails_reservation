@@ -1,6 +1,8 @@
 class RoomsController < ApplicationController
+  before_action :set_q, only: [:index, :search]
+
   def index
-    @rooms = Room.where(user_id: current_user.id)
+    @rooms = Room.where(user_id: current_user.id)    
   end
 
   def new
@@ -43,8 +45,17 @@ class RoomsController < ApplicationController
     redirect_to :rooms
   end
 
+  def search
+    @results = @q.result
+  end
+
 
   private
+
+  def set_q
+    @rooms = Room.includes(:user).order('created_at_DESC')
+    @q = Room.ransack(params[:q])
+  end
 
   def room_params
     params.require(:room).permit(:name, :introduction, :price, :address, :room_image, :user_id)

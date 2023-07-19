@@ -32,6 +32,8 @@ gem 'rails-i18n' #日本語化
 gem 'carrierwave', '~> 2.0' #キャリアウェーブのインストール
 gem 'mini_magick' #minimagickインストール
 gem 'pry-rails'
+gem 'rename' #renameするためのgem
+gem 'ransack' #検索のgem
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

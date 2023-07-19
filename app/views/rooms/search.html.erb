@@ -1,0 +1,15 @@
+<div class = "result-container">
+    <h4><%= @results.count %>件が見つかりました</h4>
+
+    <% @results.each do |room| %>
+        <div class = "card">
+            <div class = "card-top">
+                <%= image_tag room.room_image.url, class: "card-top-img" %>
+            </div>
+            <div class = "card-bottom">
+                <ul class = "card-bottom-list">
+                <li><%= room.name %></li>
+                </ul>
+            </div>
+        </div>
+</div>
