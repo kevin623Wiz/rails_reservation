@@ -48,3 +48,26 @@
     color: black;
     margin-bottom: 10px;
 }
+
+.upper-search {
+    background-color: #eee;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.upper-search-form {
+    height: 40px;
+    width: 20%;
+}
+
+.upper-search-button {
+    width: 10%;
+    height: 50px;
+    border-style: none;
+    background-color: #ddd;
+    border-radius: 20px;
+}

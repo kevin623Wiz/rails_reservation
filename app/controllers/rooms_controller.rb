@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_q, only: [:index, :search]
+  before_action :set_q, only: [:index, :show, :search]
 
   def index
     @rooms = Room.where(user_id: current_user.id)    

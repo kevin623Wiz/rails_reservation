@@ -1,4 +1,7 @@
 <div class = "show-room">
+
+<%= render "shared/search" %>
+
     <div class = "show-room-action">
         <%= link_to "←戻る", :back, class:"back-link" %>
         <p><%= link_to "編集",[:edit, @room], class: "edit-link" %></p>

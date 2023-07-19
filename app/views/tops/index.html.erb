@@ -4,7 +4,7 @@
             <span>Potepan Shereで<br>まだ体験したことのない<br>旅をしよう</span>
             <%= search_form_for @q, url: search_rooms_path do |f| %>
                 <div class = "search-field">
-                    <%= f.search_field :name_or_introduction_cont, placeholder: 'キーワードを入力', class:"search-form-area" %>
+                    <%= f.search_field :address_cont, placeholder: 'エリアを入力', class:"search-form-area" %>
                     <%= f.submit '検索', class: "search-button" %>
                 </div>
             <% end %>
