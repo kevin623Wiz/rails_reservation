@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show] # ログインしていないと、ログインページにリダイレクト
   before_action :set_q, only: [:index, :show, :search]
 
   def index
