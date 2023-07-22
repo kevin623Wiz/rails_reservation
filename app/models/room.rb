@@ -4,7 +4,7 @@ class Room < ApplicationRecord
     end
 
     def self.ransackable_associations(auth_object = nil)
-        ["user"]
+        ["reservations","user"]
     end
 
 

@@ -1,0 +1,16 @@
+<div class = "form-box">
+    <%= form_with model: @reservation, method: :post, url: reservations_confirm_path do |f| %>
+        <%= f.label :check_in, "チェックイン" %>
+        <%= f.date_field :check_in %>
+
+        <%= f.label :check_out, "チェックアウト" %>
+        <%= f.date_field :check_out %>
+
+        <%= f.label :total_people, "人数" %>
+        <%= f.text_field :total_people %>
+
+        <div class = "buttons">
+            <%= f.submit "予約確認" %>
+        </div>
+    <% end %>
+</div>

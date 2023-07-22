@@ -1,4 +1,4 @@
-class ReservationController < ApplicationController
+class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.where(user_id: current_user.id).includes(:user).order("created_at DESC")
   end
@@ -7,14 +7,8 @@ class ReservationController < ApplicationController
     @reservation = Reservation.new
   end
 
-  def confirm
-    @reservation = Reservation.new(reservation_params)
-    @room = Room.find(params[:reservation][:room_id])
-    @user = current_user
-  end
-
   def create
-    @reservation = Reservation.new(reservation_params)
+    @reservation = Reservation.new(reservation_params) #情報の入ったパラメータを渡す
     @room = Room.find(params[:room_id])
     @user = current_user
     if @reservation.save
@@ -25,10 +19,14 @@ class ReservationController < ApplicationController
     end
   end
 
+  def confirm
+    @reservation = Reservation.new(reservation_params)
+  end
+
   private
 
   def reservation_params
-    params.require(:reservation).permit(check_in, check_out, total_people, :user_id, :room_id)
+    params.require(:reservation).permit(:check_in, :check_out, :total_people, :user_id, :room_id)
   end
 
 end
