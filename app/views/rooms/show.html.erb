@@ -28,6 +28,22 @@
                         <td><%= @room.introduction %></td>
                     </tr>
                 </table>
+                <div class = "reservation-form">
+                <%= form_with model: @reservation, method: :post, url: room_reservations_confirm_path do |f| %>
+
+                    <%= f.label :check_in, "チェックイン" %>
+                    <%= f.date_field :check_in %>
+
+                    <%= f.label :check_out, "チェックアウト" %>
+                    <%= f.date_field :check_out %>
+
+                    <%= f.label :total_people, "人数" %>
+                    <%= f.text_field :total_people %>
+
+                    <%= f.hidden_field :room_id, value: @room.id %>
+                    <%= f.submit "予約する" %>
+                <% end %>
+                </div>
             </div>
         </div>
     <% end %>

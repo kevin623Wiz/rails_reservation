@@ -10,9 +10,10 @@ class Room < ApplicationRecord
 
     mount_uploader :room_image, RoomImageUploader
     belongs_to :user
+    has_many :reservations, dependent: :destroy #関連データを削除
 
     validates :name, presence: true
-    validates :introduction, presence: true
+    validates :introduction, presence: true, length: {in: 1..150}
     validates :price, presence: true
     validates :address, presence: true
 

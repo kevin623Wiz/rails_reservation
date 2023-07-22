@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'reservation/index'
-  get 'rooms/index'
+  get "/" => 'tops#index'
   root to: 'tops#index'
+  get 'rooms/index'
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',
@@ -13,8 +13,6 @@ Rails.application.routes.draw do
     get "/users/sign_out", :to => "devise/sessions#destroy" 
   end
 
-  get "/" => 'tops#index'
-
   resources :rooms do
     collection do
       get 'search'
@@ -22,5 +20,7 @@ Rails.application.routes.draw do
   end
 
   resources :reservations
+  post 'reservations/confirm'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
