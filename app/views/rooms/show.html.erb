@@ -9,29 +9,48 @@
         <%= form_with model: @room do |f| %>
         <div class = room-show-container>
             <%= image_tag @room.room_image.url %>
-            <div class = "room-box">
-                <table>
-                    <tr>
-                        <th>施設名</th>
-                        <td class = "show-room-name"><%= @room.name %></td>
-                    </tr>
-                    <tr>
-                        <th>価格</th>
-                        <td class = "show-room-price"><%= number_to_currency(@room.price, :unit => "¥", :format => "%u%n") %></td>
-                    </tr>
-                    <tr>
-                        <th>住所</th>
-                        <td><%= @room.address %></td>
-                    </tr>
-                    <tr>
-                        <th>施設詳細</th>
-                        <td><%= @room.introduction %></td>
-                    </tr>
-                </table>
-                <div class = "reservation-button">
-                    <%= link_to "予約する", new_reservation_path %>
+                <div class = "room-box">
+                    <table>
+                        <tr>
+                            <th>施設名</th>
+                            <td class = "show-room-name"><%= @room.name %></td>
+                        </tr>
+                        <tr>
+                            <th>価格</th>
+                            <td class = "show-room-price"><%= number_to_currency(@room.price, :unit => "¥", :format => "%u%n") %></td>
+                        </tr>
+                        <tr>
+                            <th>住所</th>
+                            <td><%= @room.address %></td>
+                        </tr>
+                        <tr>
+                            <th>施設詳細</th>
+                            <td><%= @room.introduction %></td>
+                        </tr>
+                    </table>
                 </div>
-            </div>
+            <% end %>
+        </div>
+
+    <%= form_with model: @reservation, method: :post, url: reservations_confirm_path do |f| %>
+        <div>
+            <%= f.label :check_in, "チェックイン" %>
+            <%= f.date_field :check_in %>
+        </div>
+        <div>
+            <%= f.label :check_out, "チェックアウト" %>
+            <%= f.date_field :check_out %>
+        </div>
+        <div>
+            <%= f.label :total_people, "人数" %>
+            <%= f.text_field :total_people %>
+        </div>
+
+            <%= f.hidden_field :room_id, value: @room.id %>
+            <%# <%= f.hidden_field :user_id, value: @user.id %> 
+
+        <div class="actions">
+            <%= f.submit "予約する" %>
         </div>
     <% end %>
 </div>

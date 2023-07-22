@@ -1,5 +1,8 @@
 <div class = "form-box">
-    <%= form_with model: @reservation, method: :post, url: reservations_confirm_path do |f| %>
+
+<%= render "shared/error", obj: @reservation %> 
+
+    <%= form_with model: [@room, @reservation], method: :post, url: reservations_confirm_path do |f| %>
         <%= f.label :check_in, "チェックイン" %>
         <%= f.date_field :check_in %>
 
@@ -12,5 +15,6 @@
         <div class = "buttons">
             <%= f.submit "予約確認" %>
         </div>
+
     <% end %>
 </div>
