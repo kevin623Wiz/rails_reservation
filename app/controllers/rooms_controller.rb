@@ -23,6 +23,8 @@ class RoomsController < ApplicationController
 
   def show
     @room = Room.find(params[:id])
+    @user = User.find(current_user.id)
+    @reservation = Reservation.new
   end
 
   def edit
@@ -46,6 +48,7 @@ class RoomsController < ApplicationController
     redirect_to :rooms
   end
 
+  #検索結果の表示
   def search
     @results = @q.result
   end
@@ -53,6 +56,7 @@ class RoomsController < ApplicationController
 
   private
 
+  #ransack
   def set_q
     @rooms = Room.includes(:user).order('created_at_DESC')
     @q = Room.ransack(params[:q])

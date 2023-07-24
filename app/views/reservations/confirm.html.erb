@@ -1,42 +1,44 @@
-<h3>予約確認</h3>
+<div class = "confirm-container">
+    <h3>予約確認</h3>
 
-<%= render "shared/error", obj: @reservation %> 
+    <div class = "confirm">
+        <table>
+            <tr>
+                <th>チェックイン</th>
+                <td><%= @reservation.check_in %></td>
+            </tr>
+            <tr>
+                <th>チェックアウト</th>
+                <td><%= @reservation.check_out %></td>
+            </tr>
+            <tr>
+                <th>日数</th>
+                <td><%= @reservation.total_days %>日</td>
+            </tr>
+            <tr>
+                <th>人数</th>
+                <td><%= @reservation.total_people %>人</td>
+            </tr>
+            <tr>
+                <th>合計金額</th>
+                <td><%= @reservation.total_price %>円</td>
+            </tr>
+        </table>
 
-<div class = "confirm">
-    <table>
-        <tr>
-            <th>チェックイン</th>
-            <td><%= @reservation.check_in %></td>
-        </tr>
-        <tr>
-            <th>チェックアウト</th>
-            <td><%= @reservation.check_out %></td>
-        </tr>
-        <tr>
-            <th>日数</th>
-            <td><%= @reservation.total_days %></td>
-        </tr>
-        <tr>
-            <th>人数</th>
-            <td><%= @reservation.total_people %></td>
-        </tr>
-        <tr>
-            <th>合計金額</th>
-            <td><%= @reservation.total_price %></td>
-        </tr>
-    </table>
+        <%= form_with model: @reservation, url: reservations_path do |f| %>
+            <%= f.hidden_field :check_in %>
+            <%= f.hidden_field :check_out %>
+            <%= f.hidden_field :total_people %>
+            <%= f.hidden_field :total_price %>
+            <%= f.hidden_field :user_id, value: @user.id %>
+            <%= f.hidden_field :room_id, value: @room.id %>
+            <p class = "last-confirm">上記内容で正しければ「確定」ボタンを押してください</p>
+            <div class = "confirm-button-area">
+                <%= f.submit "予約を確定する", class: "reservation-button" %>
+                <%= link_to "キャンセル", :back, class: "reservation-cancel" %>
+            </div>
+            
+        <% end %>
 
-    <%= form_with model: @reservation do |f| %>
-        <%= f.hidden_field :check_in %>
-        <%= f.hidden_field :check_out %>
-        <%= f.hidden_field :total_people %>
-        <%= f.hidden_field :total_price %>
-        <%= f.hidden_field :user_id %>
-        <%= f.hidden_field :room_id %>
-        <p class = "last-confirm">上記内容で正しければ「確定」ボタンを押してください</p>
-            <%= f.submit "予約を確定する" %>
-            <%= link_to "キャンセル", :back %>
-        
-    <% end %>
-
+    </div>
 </div>

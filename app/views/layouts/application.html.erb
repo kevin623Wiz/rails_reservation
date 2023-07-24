@@ -26,6 +26,8 @@
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <li><%= link_to "施設の新規登録", new_room_path, class:"dropdown-item" %></li>
               <li><%= link_to "登録済み施設一覧", rooms_path(current_user.rooms), class:"dropdown-item" %></li>
+              <li><%= link_to "予約済み施設一覧", reservations_path(current_user.reservations), class:"dropdown-item" %></li>
+              <li><%= link_to "アカウント設定", users_account_path, class:"dropdown-item" %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, class:"dropdown-item", method: :delete %></li>
             </ul>
           </div>

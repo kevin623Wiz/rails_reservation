@@ -1,0 +1,42 @@
+<div class = "account-container">
+
+  <h3>設定</h3>
+
+  <div class = "account">
+    <div class = "side-menu">
+      <%= link_to "アカウント", users_account_path, class: "side-menu-item" %>
+      <%= link_to "プロフィール", users_profile_path, class: "side-menu-item" %>
+    </div>
+
+    <div class = "account-info">
+      <div class = "account-info-head">
+        <h4>プロフィール</h4>
+      </div>
+
+      <%= form_with model: @user, url: users_profile_path do |f| %>
+        <div class = "field">
+            <%= f.label :avatar, "アイコン画像" %>
+            <div class = "field-icon">
+                <%= image_tag current_user.avatar.url %>
+                <%= f.file_field :avatar %>
+            </div>
+        </div>
+
+        <div class = "field">
+            <%= f.label :name, "名前" %><br />
+            <%= f.text_field :name %>
+        </div>
+
+        <div class = "field">
+            <%= f.label :profile, "自己紹介" %><br />
+            <%= f.text_area :profile %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "保存", class: "user-edit-button" %>
+          <%= link_to "キャンセル", :back, class: "user-edit-cancel" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
