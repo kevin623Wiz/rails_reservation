@@ -27,7 +27,6 @@
                     </tr>
                 </table>
             <% end %>
-            <p><% flash[:alert] %></p>
             <%= form_with model: @reservation, method: :post, url: reservations_confirm_path do |f| %>
                 <div class = "reservation-container">
                     <div class = "reservation-box">
@@ -44,6 +43,8 @@
                             <%= f.text_field :total_people, class: "reservation-field" %>
                         </div>
                     </div>
+
+                    <p class = "alert"><%= flash[:alert] %></p>
 
                     <%= f.hidden_field :room_id, value: @room.id %>
                     <%= f.hidden_field :user_id, value: @user.id %> 

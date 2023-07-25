@@ -24,6 +24,7 @@ class UsersController < ApplicationController
       flash[:notice] = "プロフィールを更新しました"
       redirect_to users_profile_path(current_user)
     else
+      flash[:alert] = "プロフィールを更新できませんでした"
       render users_profile_edit_path(current_user)
     end
   end

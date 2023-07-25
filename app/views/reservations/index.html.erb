@@ -13,16 +13,16 @@
         </tr>
     </thead>
     <tbody>
-    <% @reservations.each do |r| %>
-        <tr>
-            <td><%= image_tag r.room.room_image.url, class: "room-image" %></td>
-            <td><%= r.room.name %></td>
-            <td><%= r.room.introduction %></td>
-            <td>¥<%= r.total_price %></td>
-            <td><%= r.check_in.strftime("%Y/%m/%d") %></td>
-            <td><%= r.check_out.strftime("%Y/%m/%d") %></td>
-            <td><%= r.created_at.strftime("%Y/%m/%d %H:%M") %></td>
-        </tr>
-    <% end %>
+        <% @reservations.each do |r| %>
+            <tr>
+                <td><%= image_tag r.room.room_image.url, class: "room-image" %></td>
+                <td><%= r.room.name %></td>
+                <td><%= r.room.introduction %></td>
+                <td>¥<%= r.total_price %></td>
+                <td><%= r.check_in.strftime("%Y/%m/%d") %></td>
+                <td><%= r.check_out.strftime("%Y/%m/%d") %></td>
+                <td><%= r.created_at.strftime("%Y/%m/%d %H:%M") %></td>
+            </tr>
+        <% end %>
     </tbody>
 </table>

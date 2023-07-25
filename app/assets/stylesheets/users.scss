@@ -53,8 +53,19 @@
     background-color: #fff;
 }
 
+.field-icon {
+    margin: 30px 0 30px 30px;
+    display: flex;
+    column-gap: 50px;
+}
+
 .user-edit-form {
     height: 40px;
+    width: 500px;
+}
+
+.user-edit-area {
+    height: 200px;
     width: 500px;
 }
 

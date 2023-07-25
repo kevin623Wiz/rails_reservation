@@ -1,0 +1,26 @@
+<h3>予約の編集</h3>
+
+<div class = "form-box">
+    <%= form_with model: @reservation do |f| %>
+      <table class = "form-table">
+        <tr class = "field">
+            <th><%= f.label :check_in, "チェックイン" %></th>
+            <td><%= f.date_field :check_in %></td>
+        </tr>
+        <tr class = "field">
+            <th><%= f.label :check_out, "チェックアウト" %></th>
+            <td><%= f.date_field :check_out %></td>
+        </tr>
+        <tr class = "field">
+            <th><%= f.label :total_people, "人数" %></th>
+            <td><%= f.text_field :total_people %></td>
+        </tr>
+      </table>
+
+        <tr class = "button-area">
+            <%= f.submit "保存", class:"form-submit" %>
+            <%= link_to "キャンセル", :rooms, class:"cancel" %>
+        </tr>
+
+    <% end %>
+</div>

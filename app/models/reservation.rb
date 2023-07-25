@@ -5,16 +5,20 @@ class Reservation < ApplicationRecord
     validates :check_in, presence: true
     validates :check_out, presence: true
     validates :total_people, presence: true, numericality: {only_integer: true, greater_than: 0}
-    validate :today_check
+    validate :start_end_check
 
     #自作バリデーション（チェックアウト日がチェックイン日以降でないとダメ）
-
-    def today_check
-        if check_in != nil && check_out != nil && check_in < Date.today
-            errors.add(:check_in, "は本日以降の日付を選択してください")
+    def start_end_check
+        if check_in == nil
+            errors.add(:check_in,"開始日を入力してください")
+        elsif check_out == nil
+            errors.add(:check_out,"終了日を入力してください")
+        elsif check_out < check_in
+            errors.add(:check_out,"終了日は開始日以降の日付にしてください")
         end
     end
 
+    #宿泊日数の計算、合計金額の計算
     def total_days
         (self.check_out - self.check_in).to_i
     end
