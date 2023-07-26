@@ -4,33 +4,32 @@
 
 <div class = "form-box">
     <%= form_with model: @room do |f| %>
-      <table class = "form-table">
-        <tr class = "field">
-            <th><%= f.label :name, "施設名" %></th>
-            <td><%= f.text_field :name %></td>
-        </tr>
-        <tr class = "field">
-            <th><%= f.label :introduction, "施設詳細" %></th>
-            <td><%= f.text_area :introduction %></td>
-        </tr>
-        <tr class = "field">
-            <th><%= f.label :price, "料金" %></th>
-            <td><%= f.text_field :price %></td>
-        </tr>
-        <tr class = "field">
-            <th><%= f.label :address, "住所" %></th>
-            <td><%= f.text_field :address %></td>
-        </tr>
-        <tr class = "field">
-            <th><%= f.label :room_image, "施設画像" %></th>
-            <td><%= f.file_field :room_image %></td>
-        </tr>
-      </table>
+        <table class = "form-table">
+            <tr class = "field">
+                <th><%= f.label :name, "施設名" %></th>
+                <td><%= f.text_field :name %></td>
+            </tr>
+            <tr class = "field">
+                <th><%= f.label :introduction, "施設詳細" %></th>
+                <td><%= f.text_area :introduction %></td>
+            </tr>
+            <tr class = "field">
+                <th><%= f.label :price, "料金" %></th>
+                <td><%= f.text_field :price %></td>
+            </tr>
+            <tr class = "field">
+                <th><%= f.label :address, "住所" %></th>
+                <td><%= f.text_field :address %></td>
+            </tr>
+            <tr class = "field">
+                <th><%= f.label :room_image, "施設画像" %></th>
+                <td><%= f.file_field :room_image %></td>
+            </tr>
+        </table>
 
-        <tr class = "button-area">
-            <%= f.submit "保存", class:"form-submit" %>
-            <%= link_to "キャンセル", :rooms, class:"cancel" %>
-        </tr>
-
+            <div class = "button-area">
+                <%= f.submit "保存", class:"form-submit" %>
+                <%= link_to "キャンセル", :rooms, class:"cancel" %>
+            </div>
     <% end %>
 </div>

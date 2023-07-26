@@ -35,10 +35,8 @@
             <p class = "last-confirm">上記内容で正しければ「確定」ボタンを押してください</p>
             <div class = "confirm-button-area">
                 <%= f.submit "予約を確定する", class: "reservation-button" %>
-                <%= link_to "キャンセル", :back, class: "reservation-cancel" %>
-            </div>
-            
+                <%= link_to "キャンセル", room_path(@room.id), class: "reservation-cancel" %>
+            </div>  
         <% end %>
-
     </div>
 </div>
