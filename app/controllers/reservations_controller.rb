@@ -30,6 +30,10 @@ class ReservationsController < ApplicationController
       flash[:alert] = "チェックイン日を入力してください"
       render 'rooms/show' and return
     end
+    if @reservation.check_in < Date.today
+      flash[:alert] = "過去の日付は選択できません"
+      render 'rooms/show' and return
+    end
     if @reservation.check_out == nil
       flash[:alert] = "チェックアウト日を入力してください"
       render 'rooms/show' and return
