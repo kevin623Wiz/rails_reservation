@@ -1,0 +1,34 @@
+<main class = "first-view">
+    <div class = "top-container">
+        <div class ="search-form">
+            <span>Potepan Shereで<br>まだ体験したことのない<br>旅をしよう</span>
+            <%= search_form_for @q, url: search_rooms_path do |f| %>
+                <div class = "search-field">
+                    <%= f.search_field :address_cont, placeholder: 'エリアを入力', class:"search-form-area" %>
+                    <%= f.submit '検索', class: "search-button" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+    <div class = "recommend">
+        <h2>おすすめのエリア</h2>
+        <div class = "recommend-area">
+            <div class = "recommend-area-card">
+                <%= link_to image_tag("tokyo.jpeg"), search_rooms_path(q:{address_start:"東京"}) %>
+                <span>東京</span>
+            </div>
+            <div class = "recommend-area-card">
+                <%= link_to image_tag("osaka.jpeg"), search_rooms_path(q:{address_cont:"大阪"}) %>
+                <span>大阪</span>
+            </div>
+            <div class = "recommend-area-card">
+                <%= link_to image_tag("kyoto.jpeg"), search_rooms_path(q:{address_start:"京都"}) %>
+                <span>京都</span>
+            </div>
+            <div class = "recommend-area-card">
+                <%= link_to image_tag("sapporo.jpeg"), search_rooms_path(q:{address_cont:"札幌"}) %>
+                <span>札幌</span>
+            </div>
+        </div>
+    </div>
+</main>

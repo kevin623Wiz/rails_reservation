@@ -1,0 +1,87 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.account {
+    margin-top: 30px;
+    width: 80%;
+    margin: 30px auto 300px;
+    display: flex;
+    justify-content: center;
+    column-gap: 50px;
+}
+
+.account h4 {
+    font-size: 30px;
+}
+
+.side-menu-item {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    padding: 15px 90px;
+    color: #000;
+    border: #000 solid 1px;
+}
+
+.account-info {
+    position: relative;
+    width: 850px;
+    column-gap: 20px;
+}
+
+.account-info-head {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 200px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #000;
+}
+
+.account-info-bottom {
+    position: absolute;
+    left: 0;
+    top: 40px;
+}
+
+.account-info-item th {
+    font-weight: 700;
+    border: none;
+}
+
+.account-info-item td {
+    background-color: #fff;
+}
+
+.field-icon {
+    margin: 30px 0 30px 30px;
+    display: flex;
+    column-gap: 50px;
+}
+
+.user-edit-form {
+    height: 40px;
+    width: 500px;
+}
+
+.user-edit-area {
+    height: 200px;
+    width: 500px;
+}
+
+.actions {
+    margin-top: 15px;
+}
+
+.user-edit-button {
+    background-color: orange;
+    color: #fff;
+    padding: 15px 50px;
+}
+
+.user-edit-cancel {
+    color: #000;
+    border: 1px #000 solid;
+    text-decoration: none;
+    padding: 18px 25px;
+}

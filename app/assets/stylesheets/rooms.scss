@@ -1,0 +1,112 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.room-search-title {
+    margin: 20px 0 40px 50px;
+}
+
+.room-show-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    column-gap: 80px;
+}
+
+.show-room-action {
+    width: 70%;
+    margin: 30px auto 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.back-link,
+.edit-link {
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.room-image {
+    width: 100px;
+    height: 50px;
+}
+
+.room-box,
+.room-box td {
+    background-color: lightgoldenrodyellow;
+}
+
+.room-box th {
+    width: 200px;
+    border: none;
+}
+
+.room-box td {
+    width: 450px;
+}
+
+.show-room-name {
+    color: #222;
+    font-size: 32px;
+}
+
+.show-room-price,
+.room-price {
+    color: orange;
+    font-size: 32px;
+}
+
+.room-table {
+    width: 90%;
+}
+
+.room-table-body td {
+    border-bottom: 1px #ddd solid;
+}
+
+.room-table-body .btn {
+    background-color: #f9ecd5;
+    border-style: none;
+    color: #000;
+}
+
+.result-container {
+    margin-bottom: 100px;
+}
+
+.card-container {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 30px;
+}
+
+.card {
+    width: 30%;
+    border-radius: 20px;
+}
+
+.card-top-img {
+    width: 100%;
+}
+
+.card-bottom {
+    background-color: #f9ecd5;
+    padding-top: 30px;
+}
+
+.card-bottom .room-name {
+    font-size: 24px;
+}
+
+.card-bottom .room-address {
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.card-bottom .room-introduction {
+    height: 80px;
+    margin-bottom: 20px;
+}

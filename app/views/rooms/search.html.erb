@@ -1,0 +1,24 @@
+<div class = "result-container">
+
+    <%= render "shared/search" %>
+
+    <h4 class = "room-search-title"><%= @results.count %>件が見つかりました</h4>
+    <div class = "card-container">
+        <% @results.each do |room| %>
+            <div class = "card">
+                <div class = "card-top">
+                    <%= image_tag room.room_image.url, class: "card-top-img" %>
+                </div>
+                <div class = "card-bottom">
+                    <ul class = "card-bottom-list">
+                        <li class = "room-name"><%= room.name %></li>
+                        <li class = "room-address"><%= room.address %></li>
+                        <li class = "room-introduction"><%= room.introduction.truncate(30) %></li>
+                        <li class = "room-price"><%= number_to_currency(room.price, :unit => "¥", :format => "%u%n") %></li>
+                        <%= link_to "詳細はこちら", room_path(room.id), class: "btn btn-warning" %>
+                    </ul>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class = "profile-container">
+    
+    <h3>設定</h3>
+
+    <% if flash[:notice] %>
+        <p class = "notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if flash[:alert] %>
+        <p class = "alert"><%= flash[:alert] %></p>
+    <% end %>
+
+    <div class = "account">
+        <div class = "side-menu">
+            <%= link_to "アカウント", users_account_path, class: "side-menu-item" %>
+            <%= link_to "プロフィール", users_profile_path, class: "side-menu-item" %>
+        </div>
+
+        <div class = "account-info">
+            <div class = "account-info-head">
+                <h4>プロフィール</h4>
+                <%= link_to "編集", users_profile_edit_path, class: "edit-link" %>
+            </div>
+            <div class = "account-info-bottom">
+                <table>
+                    <tr class = "account-info-item">
+                        <th>アイコン画像</th>
+                        <td><%= image_tag current_user.avatar.url %></td>
+                    </tr>
+                    <tr class = "account-info-item">
+                        <th>名前</th>
+                        <td><%= current_user.name %></td>
+                    </tr>
+                    <tr class = "account-info-item">
+                        <th>自己紹介</th>
+                        <td><%= current_user.profile %></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

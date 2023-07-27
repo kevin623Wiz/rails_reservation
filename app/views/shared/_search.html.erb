@@ -1,0 +1,7 @@
+<%= search_form_for @q, url: search_rooms_path do |f| %>
+    <div class = "upper-search">
+        <%= f.search_field :address_cont, placeholder: 'エリアを入力', class:"upper-search-form" %>
+        <%= f.search_field :name_or_introduction_cont, placeholder: 'キーワードを入力', class:"upper-search-form" %>
+        <%= f.submit '検索', class: "upper-search-button" %>
+        </div>
+<% end %>

@@ -1,0 +1,73 @@
+.form-box {
+    text-align: center;
+    margin: 30px auto 30px;
+    padding: 50px 0 50px;
+    width: 60%;
+    background-color: #ddd;
+}
+
+.form-box h2 {
+    margin-bottom: 20px;
+}
+
+.form-table {
+    margin-bottom: 10px;
+}
+
+.form-table th {
+    border: none;
+    background-color: #f9ecd5;
+}
+
+.field {
+    margin: 10px auto 0;
+}
+
+.form-login input[type = "submit"],
+.form-new input[type = "submit"], 
+.form-submit {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 70%;
+    height: 50px;
+    border-style: none;
+    background-color: orange;
+    border-radius: 20px;
+}
+
+.new-registration,
+.user-login,
+.cancel {
+    display: inline-block;
+    width: 70%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.upper-search {
+    background-color: #eee;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.upper-search-form {
+    height: 40px;
+    width: 20%;
+}
+
+.upper-search-button {
+    width: 10%;
+    height: 50px;
+    border-style: none;
+    background-color: #ddd;
+    border-radius: 20px;
+}

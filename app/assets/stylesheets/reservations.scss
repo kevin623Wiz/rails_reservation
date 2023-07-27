@@ -1,0 +1,78 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.reservation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reservation-box {
+    background-color: #fff;
+    padding: 50px 0px;
+    margin: 0 20px 10px 20px;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.reservation-form-item {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.reservation-field {
+    height: 50px;
+}
+
+.reservation-button {
+    margin: 20px auto 10px;
+    width: 90%;
+    height: 50px;
+    border-style: none;
+    background-color: orange;
+    border-radius: 20px;
+}
+
+.confirm-container {
+    width: 70%;
+    margin: 0 auto 100px;
+}
+
+.confirm table {
+    margin-bottom: 10px;
+}
+
+.confirm th {
+    width: 200px;
+    border: none;
+}
+
+.confirm td {
+    width: 200px;
+    background-color: #fff;
+}
+
+.last-confirm {
+    text-align: center;
+}
+
+.confirm-button-area {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-cancel {
+    display: inline-block;
+    width: 90%;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+    margin: 10px auto;
+    border: #000 1px solid;
+}
