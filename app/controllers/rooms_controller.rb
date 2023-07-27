@@ -37,6 +37,7 @@ class RoomsController < ApplicationController
       flash[:notice] = "施設情報を更新しました"
       redirect_to :rooms
     else
+      flash[:alert] = "施設情報を更新できませんでした"
       render "edit"
     end
   end
